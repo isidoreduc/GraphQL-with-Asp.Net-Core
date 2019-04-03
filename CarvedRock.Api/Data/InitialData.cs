@@ -8,7 +8,7 @@ namespace CarvedRock.Api.Data
 {
     public static class InitialData
     {
-        public static void Seed(this CarvedRockDbContext dbContext)
+        public static async void SeedAsync (this CarvedRockDbContext dbContext)
         {
             if (!dbContext.Products.Any())
             {
@@ -84,7 +84,7 @@ namespace CarvedRock.Api.Data
                     IntroducedAt = DateTimeOffset.Now.AddMonths(-1)
                 });
 
-                dbContext.SaveChanges();
+                 await dbContext.SaveChangesAsync();
             }
         }
     }

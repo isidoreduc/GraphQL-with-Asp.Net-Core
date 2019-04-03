@@ -15,7 +15,7 @@ namespace CarvedRock.Api.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Product>> GetAll() => 
+        public async Task<IEnumerable<Product>> GetAllAsync() => 
             await _dbContext.Products.ToListAsync();
 
     }

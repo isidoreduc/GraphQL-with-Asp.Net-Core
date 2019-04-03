@@ -6,11 +6,11 @@ namespace CarvedRock.Api.GraphQL
 {
     public class CarvedRockQuery: ObjectGraphType
     {
-        public CarvedRockQuery(ProductRepository productRepository)
+        public CarvedRockQuery(IProductRepository productRepository)
         {
             Field<ListGraphType<ProductType>>(
                 "products", 
-                resolve: context => productRepository.GetAll()
+                resolve: context => productRepository.GetAllAsync()
             );
         }
     }

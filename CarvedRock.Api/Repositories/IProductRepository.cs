@@ -7,6 +7,6 @@ namespace CarvedRock.Api.Repositories
 {
     public interface IProductRepository
     {
-        Task<IEnumerable<Product>> GetAll();
+        Task<IEnumerable<Product>> GetAllAsync();
     }
 }

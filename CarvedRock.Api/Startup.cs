@@ -41,7 +41,7 @@ namespace CarvedRock.Api
         {
             app.UseGraphQL<CarvedRockSchema>();
             app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
-            dbContext.Seed();
+            dbContext.SeedAsync();
         }
     }
 }
