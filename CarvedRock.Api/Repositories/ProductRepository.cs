@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarvedRock.Api.Repositories
 {
-    public class ProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly CarvedRockDbContext _dbContext;
 
@@ -15,9 +15,8 @@ namespace CarvedRock.Api.Repositories
             _dbContext = dbContext;
         }
 
-        public Task<List<Product>> GetAll()
-        {
-            return _dbContext.Products.ToListAsync();
-        }
+        public async Task<IEnumerable<Product>> GetAll() => 
+            await _dbContext.Products.ToListAsync();
+
     }
 }
